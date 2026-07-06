@@ -1,0 +1,57 @@
+### Register User
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "bharath",
+  "email": "bharath@gmail.com",
+  "password": "password123"
+}
+### Login User
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "bharath@gmail.com",
+  "password": "password123"
+}
+
+### Apply Loan
+POST http://localhost:8080/api/loans/apply
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiaGFyYXRoQGdtYWlsLmNvbSIsImlhdCI6MTc4MzIxNjM0OSwiZXhwIjoxNzgzMjE5OTQ5fQ.sBR_k_9CcF26JnfuZXAzcbk6oA6HWvM_dASJhxeesmn1q6agQl67E8_7wjn95wc5vssR5G8il376b_rg6ZFzjg
+Content-Type: application/json
+
+{
+  "applicantName": "John",
+
+  "age": 25,
+  "creditScore": 750,
+  "annualIncome": 60000,
+  "loanAmount": 10000
+}
+### Get All Loans
+GET http://localhost:8080/api/loans
+
+### Update Loan
+PUT http://localhost:8080/api/loans/2
+Content-Type: application/json
+
+{
+  "applicantName": "Bharath",
+  "age": 30,
+  "annualIncome": 80000,
+  "creditScore": 780,
+  "loanAmount": 120000
+}
+### Delete Loan
+DELETE http://localhost:8080/api/loans/2
+
+### Search Loan By Applicant Name
+GET http://localhost:8080/api/loans/search?name=John%20Doe%20Updated
+
+### Get Loans With Pagination
+GET http://localhost:8080/api/loans/page?page=0&size=1
+
+### Get Loans Sorted By Credit Score
+GET http://localhost:8080/api/loans/sort
+
